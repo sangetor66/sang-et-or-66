@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sangetor66.fr/sitemap.xml

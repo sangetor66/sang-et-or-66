@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101114">
+<meta name="description" content="Rechercher une rubrique ou un contenu sur SANG ET OR.">
+<title>Recherche — SANG ET OR</title>
+<link rel="canonical" href="https://sangetor66.fr/recherche.html">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="topline"></div>
+<header><div class="wrap header-inner">
+<a class="brand" href="index.html" aria-label="SANG ET OR, accueil">
+<img class="brand-logo" src="assets/logo-sang-et-or-66.svg" alt="SANG ET OR 66 — Au cœur du terrain, au cœur de l’info.">
+</a>
+<button class="menu-toggle" aria-expanded="false" aria-label="Ouvrir le menu">☰ Menu</button>
+<nav aria-label="Navigation principale"><a href="index.html" class="">Accueil</a>
+<a href="actualites.html" class="">Actualités</a>
+<a href="interviews.html" class="">Interviews</a>
+<a href="media.html" class="">Média</a>
+<a href="reportages.html" class="">Reportages</a>
+<a href="a-propos.html" class="">À propos</a>
+<a href="contact.html" class="">Contact</a></nav>
+</div></header>
+<main><section class="page-hero"><div class="wrap"><div class="eyebrow">Explorer</div><h1>Rechercher sur SANG ET OR</h1><p>Retrouvez les rubriques du média. La recherche sur les publications individuelles sera activée avec le système de publication.</p></div></section>
+<section class="section"><div class="wrap">
+<div class="field" style="max-width:620px"><label for="q">Que recherchez-vous ?</label><input id="q" type="search" placeholder="Ex. interview, reportage, actualités"></div>
+<div id="results" class="grid" style="margin-top:22px"></div>
+</div></section>
+<script>
+const items=[{t:"Actualités",d:"Articles et informations locales",u:"actualites.html"},{t:"Interviews",d:"Entretiens et portraits",u:"interviews.html"},{t:"Média",d:"Photos, galeries et vidéos",u:"media.html"},{t:"Reportages",d:"Sujets de terrain approfondis",u:"reportages.html"},{t:"À propos",d:"La démarche de SANG ET OR",u:"a-propos.html"},{t:"Contact",d:"Proposer un sujet à la rédaction",u:"contact.html"}];
+const q=document.getElementById('q'),out=document.getElementById('results');
+function render(){const term=q.value.toLowerCase().trim();const matches=items.filter(x=>(x.t+" "+x.d).toLowerCase().includes(term));out.innerHTML=matches.map(x=>`<article class="card"><div class="card-body"><span class="tag">Rubrique</span><h3>${x.t}</h3><p>${x.d}</p><a class="readmore" href="${x.u}">Ouvrir →</a></div></article>`).join('')||'<div class="empty-state">Aucun résultat dans les rubriques. La recherche d’articles sera enrichie après la mise en place du système de publication.</div>'}
+q.addEventListener('input',render);render();
+</script></main>
+<footer><div class="wrap">
+<div class="footer-inner">
+<div><a class="brand" href="index.html"><img class="brand-logo footer-logo" src="assets/logo-sang-et-or-66.svg" alt="SANG ET OR 66 — Au cœur du terrain, au cœur de l’info."></a><p class="muted" style="max-width:420px;font-size:13px">Un média de terrain consacré aux voix, aux événements et aux réalités des Pyrénées-Orientales.</p></div>
+<div class="footer-links"><a href="charte-editoriale.html">Charte éditoriale</a><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="contact.html">Contact</a></div>
+</div>
+<div class="copyright">© <span data-year></span> SANG ET OR. Tous droits réservés. <span class="muted">Les contenus de démonstration doivent être remplacés par des publications réelles avant lancement.</span></div>
+</div></footer>
+<script src="script.js"></script>
+</body></html>
